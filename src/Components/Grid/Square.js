@@ -1,7 +1,7 @@
 const square = {
     width: "50px",
     height: "50px",
-    border: "2px solid black",
+    border: "2px solid #b0b0b0",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
