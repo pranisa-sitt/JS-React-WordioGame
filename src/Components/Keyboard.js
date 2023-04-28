@@ -1,5 +1,7 @@
 import React from "react";
-import Key from "./Keys";
+import "./keyboard.css";
+import "./Key.css";
+//import Key from "./Keys"
 
 function Keyboard() {
     //Key Array
@@ -11,18 +13,18 @@ function Keyboard() {
     return <div className="Keyboard">
         <div className="row1">
             {keys1.map((key) => {
-                return <Key />;
-            })};
+                return <div className="key"> {key} </div>;
+            })}
         </div>
         <div className="row2">
             {keys2.map((key) => {
-                return <div> {key} </div>;
-            })};
+                return <div className="key"> {key} </div>;
+            })}
         </div>
         <div className="row3">
             {keys3.map((key) => {
-                return <div> {key} </div>;
-            })};
+                return <div className="key"> {key} </div>;
+            })}
         </div>
         <div className="row2"></div>
         <div className="row3"></div>

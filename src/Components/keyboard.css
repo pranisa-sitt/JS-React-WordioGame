@@ -1,0 +1,27 @@
+.Keyboard {
+    width: 700px;
+    height: 300px;
+    margin-top: 60px
+}
+
+.row1 {
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+}
+
+.row3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+}
