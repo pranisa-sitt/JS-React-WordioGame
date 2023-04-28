@@ -1,12 +1,14 @@
 const square = {
-    width: "70px",
-    height: "70px",
+    width: "50px",
+    height: "50px",
     border: "2px solid black",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontSize: "40px",
 }
+
+//created square with props so we can use the props to input the letter later
 
 const Square = ({children}) => {
     return (
