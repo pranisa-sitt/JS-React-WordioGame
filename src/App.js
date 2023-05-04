@@ -1,8 +1,10 @@
 import Keyboard from "./Components/Keyboard/Keyboard.js";
+import Row from "./Components/Grid/Rows/RowOne.js";
 import Grid from "./Components/Grid/Grid.js";
 import { useState } from "react";
 
-const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
+
 
 
 
@@ -12,8 +14,6 @@ const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
 function App() {
 
   const [keys, setKeys] = useState(keys1);
-
-
 
   return (
     <div>

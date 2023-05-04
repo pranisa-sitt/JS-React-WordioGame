@@ -10,9 +10,9 @@ const square = {
 
 //created square with props so we can use the props to input the letter later
 
-const Square = ({children}) => {
+const Square = ({squareValue}) => {
     return (
-            <div style={square}>{children}</div>
+            <div style={square}>{squareValue}</div>
     );
 }
 
