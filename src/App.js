@@ -3,6 +3,8 @@ import Grid from "./Components/Grid/Grid.js";
 
 function App() {
 
+  //array of words
+
   
 
   return (
