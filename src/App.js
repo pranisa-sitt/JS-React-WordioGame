@@ -1,6 +1,6 @@
 import Keyboard1 from "./Components/Keyboard/Keyboard1.js";
-import Keyboard2 from "./Components/Keyboard/Keyboard1.js";
-import Keyboard3 from "./Components/Keyboard/Keyboard1.js";
+import Keyboard2 from "./Components/Keyboard/Keyboard2.js";
+import Keyboard3 from "./Components/Keyboard/Keyboard3.js";
 import Grid from "./Components/Grid/Grid.js";
 import { useState } from "react";
 
@@ -15,9 +15,9 @@ const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
 
 function App() {
 
-  const [keysOne, setKeys] = useState(keys1);
-  const [keysTwo, setKeys] = useState(keys2);
-  const [keysThree, setKeys] = useState(keys3);
+  const [keysOne] = useState(keys1);
+  const [keysTwo] = useState(keys2);
+  const [keysThree] = useState(keys3);
 
   return (
     <div>
