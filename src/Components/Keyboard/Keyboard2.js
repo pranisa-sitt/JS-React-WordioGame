@@ -9,16 +9,8 @@ function Keyboard2({selectLetter, keys2, color}) {
     //const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
 
     //create 3 different keyboard components
-
     return <div className="Keyboard">
-        <div className="row1">
-            {keys1.map((key) => (
-                <Key color={color} keyValue={key} selectLetter={selectLetter} />
-            ))}
-        </div>
-   
-        /*
-        <div className="row2">
+        <div className="Row">
             {keys2.map((key) => (
                 <Key color={color} keyValue={key} selectLetter={selectLetter} />
             ))}

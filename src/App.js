@@ -17,18 +17,11 @@ const row1 = ["", "", "", "", ""]
 
 function App() {
 
-    const [keysOne] = useState(keys1);
+    const [keysOne, setKeysOne] = useState(keys1);
     const [keysTwo] = useState(keys2);
     const [keysThree] = useState(keys3);
 
     const [row, setRow] = useState(row1);
-
-
-
-  const addLetter = event =>  {
-    setKeys(event.target.value);
-    console.log(setKeys);
-  }
 
 
   return (

@@ -8,12 +8,12 @@ import RowFive from "./Rows/RowFive";
 import RowSix from "./Rows/RowSix";
 
 
-const row1 = ["1", "2", "3", "4", "5"]
-const row2 = ["6", "7", "8", "9", "10"]
-const row3 = ["6", "7", "8", "9", "10"]
-const row4 = ["6", "7", "8", "9", "10"]
-const row5 = ["6", "7", "8", "9", "10"]
-const row6 = ["6", "7", "8", "9", "10"]
+const row1 = ["", "", "", "", ""]
+const row2 = ["", "", "", "", ""]
+const row3 = ["", "", "", "", ""]
+const row4 = ["", "", "", "", ""]
+const row5 = ["", "", "", "", ""]
+const row6 = ["", "", "", "", ""]
 
 const Grid = () => {
 
@@ -23,6 +23,7 @@ const Grid = () => {
     const [rowFour, setRowFour] = useState(row4);
     const [rowFive, setRowFive] = useState(row5);
     const [rowSix, setRowSix] = useState(row6);
+
 
     return(
         <div className="container">

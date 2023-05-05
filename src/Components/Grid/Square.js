@@ -1,3 +1,5 @@
+import { v4 as uuidv4  } from "uuid";
+
 const square = {
     width: "50px",
     height: "50px",
@@ -10,9 +12,12 @@ const square = {
 
 //created square with props so we can use the props to input the letter later
 
-const Square = ({squareValue}) => {
+const Square = ({squareValue, id}) => {
+
+    const newId = uuidv4();
+
     return (
-            <div style={square}>{squareValue}</div>
+            <div id={newId} style={square}>{squareValue}</div>
     );
 }
 
