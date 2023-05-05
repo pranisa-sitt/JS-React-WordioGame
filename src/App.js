@@ -12,7 +12,6 @@ const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
 
 //function add letter to array
 //install uuid
-//3 states with 3 different colors
 
 function App() {
   const [keysOne] = useState(keys1);

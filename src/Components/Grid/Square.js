@@ -12,12 +12,12 @@ const square = {
 
 //created square with props so we can use the props to input the letter later
 
-const Square = ({squareValue, id}) => {
+const Square = ({squareValue}) => {
 
-    const newId = uuidv4();
+    
 
     return (
-            <div id={newId} style={square}>{squareValue}</div>
+        <div id={newId} style={square}>{squareValue}</div>
     );
 }
 
