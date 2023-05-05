@@ -16,6 +16,7 @@ function Key({keyValue, selectLetter, color}) {
            setLetter(yellow);
        }
 
+
     return (
         <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={selectLetter=handleClick}>{keyValue}</div>
 )};
