@@ -3,8 +3,8 @@ import { useState } from "react";
 import "./Key.css";
 
 function Key({keyValue, selectLetter, color}) {
-    // const selectLetter = () => {
-    // }
+    //  const selectLetter = () => {
+    //  }
     let green = "#3CB043";
     let yellow = '#fed550';
     let grey = '#949494';

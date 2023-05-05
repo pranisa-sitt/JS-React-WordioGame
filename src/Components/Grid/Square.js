@@ -1,3 +1,6 @@
+import { v4 as uuidv4  } from "uuid";
+import {useState} from "react";
+
 const square = {
     width: "50px",
     height: "50px",
@@ -7,12 +10,14 @@ const square = {
     justifyContent: "center",
     fontSize: "40px",
 }
-
 //created square with props so we can use the props to input the letter later
 
-const Square = ({children}) => {
+
+
+const Square = ({squareValue}) => {
+
     return (
-            <div style={square}>{children}</div>
+        <div style={square}>{squareValue}</div>
     );
 }
 
