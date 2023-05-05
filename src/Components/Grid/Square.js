@@ -15,9 +15,8 @@ const square = {
 const Square = ({squareValue}) => {
 
     
-
     return (
-        <div id={newId} style={square}>{squareValue}</div>
+        <div style={square}>{squareValue}</div>
     );
 }
 
