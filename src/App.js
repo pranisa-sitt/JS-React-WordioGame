@@ -8,7 +8,6 @@ import RowOne from "./Components/Grid/Rows/RowOne.js";
 const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
 const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
 const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
-const row1 = ["", "", "", "", ""]
 
 
 //function add letter to array
@@ -21,12 +20,11 @@ function App() {
     const [keysTwo] = useState(keys2);
     const [keysThree] = useState(keys3);
 
-    const [row, setRow] = useState(row1);
 
 
   return (
     <div>
-      <RowOne box={row} />
+      <Grid />
       <Keyboard1 keys1={keysOne} selectLetter={() => console.log("hello1")} />
       <Keyboard2 keys2={keysTwo} selectLetter={() => console.log("hello2")} />
       <Keyboard3 keys3={keysThree} selectLetter={() => console.log("hello3")} />
