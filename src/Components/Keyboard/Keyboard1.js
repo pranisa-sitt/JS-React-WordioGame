@@ -11,7 +11,7 @@ function Keyboard1({selectLetter, keys1, color}) {
 
     //create 3 different keyboard components
 
-    return <div className="Keyboard">
+    return <div>
         <div className="Row">
             {keys1.map((key) => (
                 <Key color={color} keyValue={key} selectLetter={selectLetter} />
