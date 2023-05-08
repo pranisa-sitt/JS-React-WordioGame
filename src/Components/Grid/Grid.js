@@ -8,6 +8,7 @@ import RowFive from "./Rows/RowFive";
 import RowSix from "./Rows/RowSix";
 import { v4 as uuidv4  } from "uuid";
 
+// The state shouldn't be set here, we need to pass the props in app. like the keys and keyboard. 
 
 const row1 = ["", "", "", "", ""]
 const row2 = ["", "", "", "", ""]

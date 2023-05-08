@@ -16,6 +16,8 @@ function Key({keyValue, selectLetter, color}) {
            setLetter(yellow);
        }
 
+// this needs to be fixed and the state updates changed, the handle click neds to be handled in app. 
+
     return (
         <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={selectLetter=handleClick}>{keyValue}</div>
 )};
