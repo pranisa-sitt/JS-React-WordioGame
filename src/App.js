@@ -1,15 +1,31 @@
+import { useState } from "react";
+import "./App.css";
 import Keyboard1 from "./Components/Keyboard/Keyboard1.js";
 import Keyboard2 from "./Components/Keyboard/Keyboard2.js";
 import Keyboard3 from "./Components/Keyboard/Keyboard3.js";
 import Key from "./Components/Keyboard/Keys.js";
-import Grid from "./Components/Grid/Grid.js";
-import { useState } from "react";
+import RowOne from "./Components/Grid/Rows/RowOne.js";
+import RowTwo from "./Components/Grid/Rows/RowTwo.js";
+import RowThree from "./Components/Grid/Rows/RowThree.js";
+import RowFour from "./Components/Grid/Rows/RowFour.js";
+import RowFive from "./Components/Grid/Rows/RowFive.js";
+import RowSix from "./Components/Grid/Rows/RowSix.js";
+import Help from "./Components/helpBar/Help";
 import "./Components/Keyboard/keyboard.css";
+
+
 
 
 const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
 const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
 const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
+
+const row1 = ["", "", "", "", ""];
+const row2 = ["", "", "", "", ""];
+const row3 = ["", "", "", "", ""];
+const row4 = ["", "", "", "", ""];
+const row5 = ["", "", "", "", ""];
+const row6 = ["", "", "", "", ""];
 
 
 //function add letter to array
@@ -20,6 +36,17 @@ function App() {
   const [keysOne] = useState(keys1);
   const [keysTwo] = useState(keys2);
   const [keysThree] = useState(keys3);
+
+
+// STATE GRID
+  const [rowOne, setRowOne] = useState(row1);
+  const [rowTwo, setRowTwo] = useState(row2);
+  const [rowThree, setRowThree] = useState(row3);
+  const [rowFour, setRowFour] = useState(row4);
+  const [rowFive, setRowFive] = useState(row5);
+  const [rowSix, setRowSix] = useState(row6);
+
+
 
 //all props need to be in app.js. 
 
@@ -40,9 +67,19 @@ function App() {
       <nav className="header">
         <h1 className="wordle">WORDLE</h1>
       </nav>
-      <Grid></Grid>
+      <div className="btn">
+        <Help />
+      </div>
+      <div className="grid-container">
+          <RowOne box={rowOne} />
+          <RowTwo box={rowTwo} />
+          <RowThree box={rowThree} />
+          <RowFour box={rowFour} />
+          <RowFive box={rowFive} />
+          <RowSix box={rowSix} />
+      </div>
       <div className="Keyboard">
-        <div>
+        <div className="grid">
           <Keyboard1 keys1={keysOne} selectLetter={() => console.log("hello1")}>
             {/* <Key onClick={() => handleClick(keys1)}>{keys1}</Key> */}
           </Keyboard1>

@@ -126,3 +126,15 @@ nav h1 {
   background-color: #3a393c;
 }
 
+.grid-container{
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
