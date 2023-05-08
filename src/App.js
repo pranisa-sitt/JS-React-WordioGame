@@ -7,6 +7,7 @@ import { useState } from "react";
 import "./Components/Keyboard/keyboard.css";
 
 
+
 const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
 const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
 const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
@@ -20,6 +21,14 @@ function App() {
   const [keysOne] = useState(keys1);
   const [keysTwo] = useState(keys2);
   const [keysThree] = useState(keys3);
+
+  // Coloring function is here.
+  // Need to edit condition to setState of these colors.
+    let green = "#3CB043";
+    let yellow = '#fed550';
+    let grey = '#949494';
+    let initial = '#E949494';
+    const [letter, setLetter] = useState(initial)
 
 //all props need to be in app.js. 
 
@@ -43,17 +52,17 @@ function App() {
       <Grid></Grid>
       <div className="Keyboard">
         <div>
-          <Keyboard1 keys1={keysOne} selectLetter={() => console.log("hello1")}>
+          <Keyboard1 color={letter} keys1={keysOne} selectLetter={() => console.log("hello1")}>
             {/* <Key onClick={() => handleClick(keys1)}>{keys1}</Key> */}
           </Keyboard1>
         </div>
         <div>
-          <Keyboard2 keys2={keysTwo} selectLetter={() => console.log("hello2")}>
+          <Keyboard2 color={letter} keys2={keysTwo} selectLetter={() => console.log("hello2")}>
             {/* <Key onClick={() => handleClick(keys2)}>{keys2}</Key> */}
           </Keyboard2>
         </div>
         <div>
-          <Keyboard3 keys3={keysThree} selectLetter={() => console.log("hello3")}>
+          <Keyboard3 color={letter} keys3={keysThree} selectLetter={() => console.log("hello3")}>
             {/* <Key onClick={() => handleClick(keys3)}>{keys3}</Key> */}
           </Keyboard3>
         </div>
