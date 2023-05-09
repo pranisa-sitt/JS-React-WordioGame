@@ -27,12 +27,12 @@ const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
 
 //value name should be something else
 
-const row1 = ["", "", "", "", ""];
-const row2 = ["", "", "", "", ""];
-const row3 = ["", "", "", "", ""];
-const row4 = ["", "", "", "", ""];
-const row5 = ["", "", "", "", ""];
-const row6 = ["", "", "", "", ""];
+const row1 = [{rowVal: "", id: 29}, {rowVal: "", id: 30}, {rowVal: "", id: 31}, {rowVal: "", id: 32}, {rowVal: "", id: 33}];
+const row2 = [{rowVal: "", id: 34}, {rowVal: "", id: 35}, {rowVal: "", id: 36}, {rowVal: "", id: 37}, {rowVal: "", id: 38}];
+const row3 = [{rowVal: "", id: 39}, {rowVal: "", id: 40}, {rowVal: "", id: 41}, {rowVal: "", id: 42}, {rowVal: "", id: 43}];
+const row4 = [{rowVal: "", id: 44}, {rowVal: "", id: 45}, {rowVal: "", id: 46}, {rowVal: "", id: 47}, {rowVal: "", id: 48}];
+const row5 = [{rowVal: "", id: 49}, {rowVal: "", id: 50}, {rowVal: "", id: 51}, {rowVal: "", id: 52}, {rowVal: "", id: 53}];
+const row6 = [{rowVal: "", id: 54}, {rowVal: "", id: 55}, {rowVal: "", id: 56}, {rowVal: "", id: 57}, {rowVal: "", id: 58}];
 
 
 //function add letter to array

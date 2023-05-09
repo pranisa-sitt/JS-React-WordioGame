@@ -14,10 +14,10 @@ const square = {
 
 
 
-const Square = ({squareValue}) => {
+const Square = ({squareValue, index}) => {
 
     return (
-        <div style={square}>{squareValue}</div>
+        <div style={square} index={index}>{squareValue}</div>
     );
 }
 
