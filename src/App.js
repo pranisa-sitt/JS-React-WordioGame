@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+//import "./App.css";
 import Keyboard1 from "./Components/Keyboard/Keyboard1.js";
 import Keyboard2 from "./Components/Keyboard/Keyboard2.js";
 import Keyboard3 from "./Components/Keyboard/Keyboard3.js";
@@ -10,7 +10,7 @@ import RowThree from "./Components/Grid/Rows/RowThree.js";
 import RowFour from "./Components/Grid/Rows/RowFour.js";
 import RowFive from "./Components/Grid/Rows/RowFive.js";
 import RowSix from "./Components/Grid/Rows/RowSix.js";
-import Help from "./Components/helpBar/Help";
+// import Help from "./Components/helpBar/Help";
 import "./Components/Keyboard/keyboard.css";
 
 
@@ -19,8 +19,8 @@ import "./Components/Keyboard/keyboard.css";
 //use different name for values
 
 const keys1 = [{keyVal: "Q", id: 1}, {keyVal: "W", id: 2}, {keyVal: "E", id: 3}, {keyVal: "R", id: 4}, {keyVal: "T", id: 5}, {keyVal: "Y", id: 6}, {keyVal: "U", id: 7}, {keyVal: "I", id: 8}, {keyVal: "O", id: 9}, {keyVal:"P", id: 10}];
-const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
-const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
+const keys2 = [{keyVal: "A", id: 11}, {keyVal: "S", id: 12}, {keyVal: "D", id: 13}, {keyVal: "F", id: 14}, {keyVal: "G", id: 15}, {keyVal: "H", id: 16}, {keyVal: "J", id: 17}, {keyVal: "K", id: 18}, {keyVal: "L", id: 19}];
+const keys3 = [{keyVal: "DELETE", id: 20}, {keyVal: "Z", id: 21}, {keyVal: "X", id: 22}, {keyVal: "C", id: 23}, {keyVal: "V", id: 24}, {keyVal: "B", id: 25}, {keyVal: "N", id: 26}, {keyVal: "M", id: 27}, {keyVal: "ENTER", id: 28}];
 
 //object with empty value string and id 
 
@@ -83,7 +83,7 @@ function App() {
         <h1 className="wordle">WORDLE</h1>
       </nav>
       <div className="btn">
-        <Help />
+        {/* <Help /> */}
       </div>
       <div className="grid-container">
           <RowOne box={rowOne} />
@@ -95,20 +95,14 @@ function App() {
       </div>
       <div className="Keyboard">
         <div>
-          <Keyboard1 color={letter} keys1={keysOne} selectLetter={() => console.log("hello1")}>
-            {/* <Key onClick={() => handleClick(keys1)}>{keys1}</Key> */}
-          </Keyboard1>
+          <Keyboard1 color={letter} keys1={keysOne} />
         </div>
         <div>
-          <Keyboard2 color={letter} keys2={keysTwo} selectLetter={() => console.log("hello2")}>
-            {/* <Key onClick={() => handleClick(keys2)}>{keys2}</Key> */}
-          </Keyboard2>
-        </div>
+          <Keyboard2 color={letter} keys2={keysTwo} />
+        </div> 
         <div>
-          <Keyboard3 color={letter} keys3={keysThree} selectLetter={() => console.log("hello3")}>
-            {/* <Key onClick={() => handleClick(keys3)}>{keys3}</Key> */}
-          </Keyboard3>
-        </div>
+          <Keyboard3 color={letter} keys3={keysThree} />
+        </div> 
       </div>
     </div>
   );

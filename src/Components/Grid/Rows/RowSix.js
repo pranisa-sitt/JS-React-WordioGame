@@ -7,7 +7,7 @@ const RowSix = ({box, selectedSquare}) => {
     return(
             <div className="row">
                {box.map((square) => (
-                <Square squareValue={square.rowVal} index={square.id} selectedSquare={selectedSquare}/>
+                <Square squareValue={square.rowVal} key={square.id} selectedSquare={selectedSquare}/>
                ))}
             </div>
     );

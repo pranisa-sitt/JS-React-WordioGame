@@ -16,9 +16,13 @@ function Key({keyValue, selectLetter, color, index}) {
     const changeColor = () => {
         setLetter(yellow)
     }*/
+    let letter = '#949494'; 
+const handleSelectedLetter = (v) => {
+    console.log('Hello', v)
+}
 
     return (
-        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={selectLetter=handleClick} index={index}>{keyValue}</div>
+        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => handleSelectedLetter(selectLetter)} index={index}>{keyValue}</div>
 )};
 
 export default Key;

@@ -8,7 +8,7 @@ const RowOne = ({box, selectedSquare}) => {
     return(
             <div className="row">
                {box.map((square) => (
-                <Square index={square.id} squareValue={square.rowVal} selectedSquare={selectedSquare}/>
+                <Square key={square.id} squareValue={square.rowVal} selectedSquare={selectedSquare}/>
                ))}
             </div>
     );
