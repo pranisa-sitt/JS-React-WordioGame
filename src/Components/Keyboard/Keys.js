@@ -16,7 +16,9 @@ function Key({keyValue, selectLetter, color, index, currentSquare}) {
     const changeColor = () => {
         setLetter(yellow)
     }*/
-    let letter = '#949494'; 
+
+    let letter = '##E949494'; 
+    
 const handleSelectedLetter = (v) => {
     console.log(v)
     console.log(currentSquare)

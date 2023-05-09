@@ -1,13 +1,13 @@
 import "../grid.css"
 import Square from "../Square";
-import React from 'react';
 
 
-const RowFive = ({box, selectedSquare}) => {
+const RowFive = ({box, selectedSquare, currentSquare}) => {
+   
     return(
             <div className="row">
                {box.map((square) => (
-                <Square squareValue={square.rowVal} key={square.id} selectedSquare={selectedSquare}/>
+                <Square key={square.id} index={square.id} squareValue={square.rowVal} selectedSquare={selectedSquare} currentSquare={currentSquare}/>
                ))}
             </div>
     );

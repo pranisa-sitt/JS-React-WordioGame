@@ -12,8 +12,6 @@ const square = {
 }
 //created square with props so we can use the props to input the letter later
 
-
-
 const Square = ({squareValue, index, currentSquare}) => {
     if(currentSquare.id === index) {
         console.log(`We're working on this square`, currentSquare)
