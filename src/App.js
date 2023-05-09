@@ -55,6 +55,14 @@ function App() {
 
 
 
+  // Coloring function is here.
+  // Need to edit condition to setState of these colors.
+    let green = "#3CB043";
+    let yellow = '#fed550';
+    let grey = '#949494';
+    let initial = '#E949494';
+    const [letter, setLetter] = useState(initial)
+
 //all props need to be in app.js. 
 
 //selected state needs be be updated once a user clicks on the key, the onclick needs to be shown in the grid. 
@@ -86,18 +94,18 @@ function App() {
           <RowSix box={rowSix} />
       </div>
       <div className="Keyboard">
-        <div className="grid">
-          <Keyboard1 keys1={keysOne} selectLetter={() => console.log("hello1")}>
+        <div>
+          <Keyboard1 color={letter} keys1={keysOne} selectLetter={() => console.log("hello1")}>
             {/* <Key onClick={() => handleClick(keys1)}>{keys1}</Key> */}
           </Keyboard1>
         </div>
         <div>
-          <Keyboard2 keys2={keysTwo} selectLetter={() => console.log("hello2")}>
+          <Keyboard2 color={letter} keys2={keysTwo} selectLetter={() => console.log("hello2")}>
             {/* <Key onClick={() => handleClick(keys2)}>{keys2}</Key> */}
           </Keyboard2>
         </div>
         <div>
-          <Keyboard3 keys3={keysThree} selectLetter={() => console.log("hello3")}>
+          <Keyboard3 color={letter} keys3={keysThree} selectLetter={() => console.log("hello3")}>
             {/* <Key onClick={() => handleClick(keys3)}>{keys3}</Key> */}
           </Keyboard3>
         </div>
