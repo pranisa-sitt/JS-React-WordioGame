@@ -3,11 +3,11 @@ import Square from "../Square";
 import { v4 as uuidv4 } from 'uuid';
 
 
-const RowThree = ({box}) => {
+const RowThree = ({box, selectedSquare}) => {
     return(
             <div className="row">
                {box.map((square) => (
-                <Square squareValue={square}/>
+                <Square squareValue={square.rowVal} index={square.id} selectedSquare={selectedSquare}/>
                ))}
             </div>
     );

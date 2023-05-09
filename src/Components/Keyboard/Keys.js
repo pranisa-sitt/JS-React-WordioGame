@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./Key.css";
 
-function Key({keyValue, selectLetter, color}) {
+function Key({keyValue, selectLetter, color, index}) {
     //  const selectLetter = () => {
     //  }
 
@@ -18,7 +18,7 @@ function Key({keyValue, selectLetter, color}) {
     }*/
 
     return (
-        <div className="key" style={{backgroundColor: `${color}`}} onClick={selectLetter}>{keyValue}</div>
+        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={selectLetter=handleClick} index={index}>{keyValue}</div>
 )};
 
 export default Key;

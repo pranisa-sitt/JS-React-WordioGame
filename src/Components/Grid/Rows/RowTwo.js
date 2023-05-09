@@ -1,13 +1,12 @@
 import "../grid.css"
 import Square from "../Square";
-import { v4 as uuidv4  } from "uuid";
 
 
-const RowTwo = ({box}) => {
+const RowTwo = ({box, selectedSquare}) => {
     return(
             <div className="row">
                {box.map((square) => (
-                <Square squareValue={square}/>
+                <Square squareValue={square.rowVal} index={square.id} selectedSquare={selectedSquare}/>
                ))}
             </div>
     );

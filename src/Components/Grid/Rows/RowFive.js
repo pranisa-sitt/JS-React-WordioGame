@@ -1,14 +1,13 @@
 import "../grid.css"
 import Square from "../Square";
 import React from 'react';
-import { v4 as uuidv4  } from "uuid";
 
 
-const RowFive = ({box}) => {
+const RowFive = ({box, selectedSquare}) => {
     return(
             <div className="row">
                {box.map((square) => (
-                <Square squareValue={square}/>
+                <Square squareValue={square.rowVal} index={square.id} selectedSquare={selectedSquare}/>
                ))}
             </div>
     );

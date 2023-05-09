@@ -14,7 +14,7 @@ function Keyboard1({selectLetter, keys1, color}) {
     return <div>
         <div className="Row">
             {keys1.map((key) => (
-                <Key color={color} keyValue={key} selectLetter={selectLetter} />
+                <Key color={color} keyValue={key.keyVal} index={key.id} selectLetter={selectLetter} />
             ))}
         </div>
     </div>;
