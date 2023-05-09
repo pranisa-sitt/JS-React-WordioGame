@@ -43,7 +43,9 @@ function App() {
   const [keysOne, setKeysOne] = useState(keys1);
   const [keysTwo, setKeysTwo] = useState(keys2);
   const [keysThree, setKeysThree] = useState(keys3);
-
+  // set the initial value of the current square
+  let [currentSquare] = useState(row1[0])
+  
 
 // STATE GRID
   const [rowOne, setRowOne] = useState(row1);
@@ -86,16 +88,16 @@ function App() {
         {/* <Help /> */}
       </div>
       <div className="grid-container">
-          <RowOne box={rowOne} />
-          <RowTwo box={rowTwo} />
+          <RowOne box={rowOne} currentSquare={currentSquare}/>
+          {/* <RowTwo box={rowTwo} />
           <RowThree box={rowThree} />
           <RowFour box={rowFour} />
           <RowFive box={rowFive} />
-          <RowSix box={rowSix} />
+          <RowSix box={rowSix} /> */}
       </div>
       <div className="Keyboard">
         <div>
-          <Keyboard1 color={letter} keys1={keysOne} />
+          <Keyboard1 color={letter} keys1={keysOne} currentSquare={currentSquare}/>
         </div>
         <div>
           <Keyboard2 color={letter} keys2={keysTwo} />

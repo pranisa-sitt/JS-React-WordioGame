@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./Key.css";
 
-function Key({keyValue, selectLetter, color, index}) {
+function Key({keyValue, selectLetter, color, index, currentSquare}) {
     //  const selectLetter = () => {
     //  }
 
@@ -18,7 +18,8 @@ function Key({keyValue, selectLetter, color, index}) {
     }*/
     let letter = '#949494'; 
 const handleSelectedLetter = (v) => {
-    console.log('Hello', v)
+    console.log(v)
+    console.log(currentSquare)
 }
 
     return (

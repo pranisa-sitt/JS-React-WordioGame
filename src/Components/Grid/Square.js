@@ -14,11 +14,13 @@ const square = {
 
 
 
-const Square = ({squareValue, index}) => {
-
+const Square = ({squareValue, index, currentSquare}) => {
+    if(currentSquare.id === index) {
+        console.log(`We're working on this square`, currentSquare)
+    }
     return (
         <div style={square} index={index}>{squareValue}</div>
     );
-}
+};
 
 export default Square;
