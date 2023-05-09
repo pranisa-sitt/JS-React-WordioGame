@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+//import "./App.css";
 import Keyboard1 from "./Components/Keyboard/Keyboard1.js";
 import Keyboard2 from "./Components/Keyboard/Keyboard2.js";
 import Keyboard3 from "./Components/Keyboard/Keyboard3.js";
@@ -10,7 +10,7 @@ import RowThree from "./Components/Grid/Rows/RowThree.js";
 import RowFour from "./Components/Grid/Rows/RowFour.js";
 import RowFive from "./Components/Grid/Rows/RowFive.js";
 import RowSix from "./Components/Grid/Rows/RowSix.js";
-import Help from "./Components/helpBar/Help";
+// import Help from "./Components/helpBar/Help";
 import "./Components/Keyboard/keyboard.css";
 
 
@@ -19,8 +19,8 @@ import "./Components/Keyboard/keyboard.css";
 //use different name for values
 
 const keys1 = [{keyVal: "Q", id: 1}, {keyVal: "W", id: 2}, {keyVal: "E", id: 3}, {keyVal: "R", id: 4}, {keyVal: "T", id: 5}, {keyVal: "Y", id: 6}, {keyVal: "U", id: 7}, {keyVal: "I", id: 8}, {keyVal: "O", id: 9}, {keyVal:"P", id: 10}];
-const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
-const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
+const keys2 = [{keyVal: "A", id: 11}, {keyVal: "S", id: 12}, {keyVal: "D", id: 13}, {keyVal: "F", id: 14}, {keyVal: "G", id: 15}, {keyVal: "H", id: 16}, {keyVal: "J", id: 17}, {keyVal: "K", id: 18}, {keyVal: "L", id: 19}];
+const keys3 = [{keyVal: "DEL", id: 20}, {keyVal: "Z", id: 21}, {keyVal: "X", id: 22}, {keyVal: "C", id: 23}, {keyVal: "V", id: 24}, {keyVal: "B", id: 25}, {keyVal: "N", id: 26}, {keyVal: "M", id: 27}, {keyVal: "ENT", id: 28}];
 
 //object with empty value string and id 
 
@@ -36,14 +36,15 @@ const row6 = [{rowVal: "", id: 54}, {rowVal: "", id: 55}, {rowVal: "", id: 56}, 
 
 
 //function add letter to array
-//install uuid
 
 //setKeysOne, setKeysTwo, setKeysThree needs to be added below after keysOne [keysOne, setKeysOne]. I've removed them to get the app working. 
 function App() {
   const [keysOne, setKeysOne] = useState(keys1);
   const [keysTwo, setKeysTwo] = useState(keys2);
   const [keysThree, setKeysThree] = useState(keys3);
-
+  // set the initial value of the current square
+  let [currentSquare] = useState(row1[0])
+  
 
 // STATE GRID
   const [rowOne, setRowOne] = useState(row1);
@@ -83,32 +84,26 @@ function App() {
         <h1 className="wordle">WORDLE</h1>
       </nav>
       <div className="btn">
-        <Help />
+        {/* <Help /> */}
       </div>
       <div className="grid-container">
-          <RowOne box={rowOne} />
-          <RowTwo box={rowTwo} />
-          <RowThree box={rowThree} />
-          <RowFour box={rowFour} />
-          <RowFive box={rowFive} />
-          <RowSix box={rowSix} />
+          <RowOne box={rowOne} currentSquare={currentSquare}/>
+          <RowTwo box={rowTwo} currentSquare={currentSquare}/>
+          <RowThree box={rowThree} currentSquare={currentSquare}/>
+          <RowFour box={rowFour} currentSquare={currentSquare}/>
+          <RowFive box={rowFive} currentSquare={currentSquare}/>
+          <RowSix box={rowSix} currentSquare={currentSquare}/>
       </div>
       <div className="Keyboard">
         <div>
-          <Keyboard1 color={letter} keys1={keysOne} selectLetter={() => console.log("hello1")}>
-            {/* <Key onClick={() => handleClick(keys1)}>{keys1}</Key> */}
-          </Keyboard1>
+          <Keyboard1 color={letter} keys1={keysOne} currentSquare={currentSquare}/>
         </div>
         <div>
-          <Keyboard2 color={letter} keys2={keysTwo} selectLetter={() => console.log("hello2")}>
-            {/* <Key onClick={() => handleClick(keys2)}>{keys2}</Key> */}
-          </Keyboard2>
-        </div>
+          <Keyboard2 color={letter} keys2={keysTwo} currentSquare={currentSquare}/>
+        </div> 
         <div>
-          <Keyboard3 color={letter} keys3={keysThree} selectLetter={() => console.log("hello3")}>
-            {/* <Key onClick={() => handleClick(keys3)}>{keys3}</Key> */}
-          </Keyboard3>
-        </div>
+          <Keyboard3 color={letter} keys3={keysThree} currentSquare={currentSquare}/>
+        </div> 
       </div>
     </div>
   );

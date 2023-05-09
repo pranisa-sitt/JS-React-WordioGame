@@ -2,11 +2,12 @@ import "../grid.css"
 import Square from "../Square";
 
 
-const RowTwo = ({box, selectedSquare}) => {
+const RowTwo = ({box, selectedSquare, currentSquare}) => {
+    
     return(
             <div className="row">
                {box.map((square) => (
-                <Square squareValue={square.rowVal} index={square.id} selectedSquare={selectedSquare}/>
+                <Square key={square.id} index={square.id} squareValue={square.rowVal} selectedSquare={selectedSquare} currentSquare={currentSquare}/>
                ))}
             </div>
     );
