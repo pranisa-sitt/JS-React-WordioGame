@@ -14,11 +14,18 @@ import Help from "./Components/helpBar/Help";
 import "./Components/Keyboard/keyboard.css";
 
 
+//you want to map out the array keys1 that is in the state keysOne. So keysOne is the state you should map out over keyboard. 
+// Pass in the parameter key and through that you can access the key.keyVal and key.id has context menu
+//use different name for values
 
-
-const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+const keys1 = [{keyVal: "Q", id: 1}, {keyVal: "W", id: 2}, {keyVal: "E", id: 3}, {keyVal: "R", id: 4}, {keyVal: "T", id: 5}, {keyVal: "Y", id: 6}, {keyVal: "U", id: 7}, {keyVal: "I", id: 8}, {keyVal: "O", id: 9}, {keyVal:"P", id: 10}];
 const keys2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
 const keys3 = ["Enter", "Z", "X", "C", "V", "B", "N", "M", "Delete"];
+
+//object with empty value string and id 
+
+
+//value name should be something else
 
 const row1 = ["", "", "", "", ""];
 const row2 = ["", "", "", "", ""];
@@ -33,9 +40,9 @@ const row6 = ["", "", "", "", ""];
 
 //setKeysOne, setKeysTwo, setKeysThree needs to be added below after keysOne [keysOne, setKeysOne]. I've removed them to get the app working. 
 function App() {
-  const [keysOne] = useState(keys1);
-  const [keysTwo] = useState(keys2);
-  const [keysThree] = useState(keys3);
+  const [keysOne, setKeysOne] = useState(keys1);
+  const [keysTwo, setKeysTwo] = useState(keys2);
+  const [keysThree, setKeysThree] = useState(keys3);
 
 
 // STATE GRID

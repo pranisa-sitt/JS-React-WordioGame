@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./Key.css";
 
-function Key({keyValue, selectLetter, color}) {
+function Key({keyValue, selectLetter, color, index}) {
     //  const selectLetter = () => {
     //  }
     let green = "#3CB043";
@@ -19,7 +19,7 @@ function Key({keyValue, selectLetter, color}) {
 // this needs to be fixed and the state updates changed, the handle click neds to be handled in app. 
 
     return (
-        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={selectLetter=handleClick}>{keyValue}</div>
+        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={selectLetter=handleClick} index={index}>{keyValue}</div>
 )};
 
 export default Key;
