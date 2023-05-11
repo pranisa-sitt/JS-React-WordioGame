@@ -25,7 +25,9 @@ const handleSelectedLetter = (v) => {
 }
 
     return (
-        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => handleSelectedLetter(selectLetter)} index={index}>{keyValue}</div>
+       <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => handleSelectedLetter(selectLetter)} index={index}>{keyValue}</div>
 )};
+    
+        
 
 export default Key;
