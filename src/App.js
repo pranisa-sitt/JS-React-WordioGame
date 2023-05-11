@@ -36,6 +36,18 @@ const row6 = [{rowVal: "", id: 54}, {rowVal: "", id: 55}, {rowVal: "", id: 56}, 
 
 
 //function add letter to array
+const words = [
+  ['a','g','a','i','n'],
+  ['b','a','c','o','n'],
+  ['b','r','a','i','n'],
+  ['c','a','m','e','l'],
+  ['d','a','n','c','e']
+];
+
+const getRandomWord = () => {  
+  return  words[Math.floor(Math.random()*words.length)];
+};
+
 
 function App() {
   const [keysOne, setKeysOne] = useState(keys1);
@@ -90,11 +102,25 @@ function App() {
 
   // Coloring function is here.
   // Need to edit condition to setState of these colors.
-    let green = "#3CB043";
-    let yellow = '#fed550';
-    let grey = '#949494';
-    let initial = '#E949494';
+    /*let green = "#3CB043";
+    let yellow = "#fed550";
+    let grey = "#949494";*/
+    let initial = "#E949494";
     const [letter, setLetter] = useState(initial)
+
+
+
+   const [word, setWord] = useState(getRandomWord());
+    
+  
+
+//array that contains possible words and the winner word.
+//random function that dictates the winner word. This function can only be called one time per game (when you change row you don't want a new word!)
+
+//IF row1(...) = words arry => validate, else =>not valid
+// If row1(...) any letter equals getrandomWord letters => change color to green / yellow
+// if row1(...) any letter != getrandom letters => change color to grey
+//IF row1, row2, row3 etc = getRandomWord => win!
 
 
 
@@ -112,6 +138,8 @@ function App() {
 
 //research memory / O's & X's game as similar functions. 
 
+
+
   return (
     <div>
       <nav className="header">
@@ -121,7 +149,7 @@ function App() {
         <Help />
       </div>
       <div className="grid-container">
-          <RowOne box={rowOne} currentSquare={currentSquare}/>
+          <RowOne box={rowOne} currentSquare={currentSquare} />
           <RowTwo box={rowTwo} currentSquare={currentSquare}/>
           <RowThree box={rowThree} currentSquare={currentSquare}/>
           <RowFour box={rowFour} currentSquare={currentSquare}/>

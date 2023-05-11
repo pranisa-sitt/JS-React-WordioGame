@@ -29,5 +29,7 @@ function Key({keyValue, selectLetter, color, index, currentSquare, addLetter}) {
     return (
         <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => addLetter(selectLetter)} index={index}>{keyValue}</div>
 )};
+    
+        
 
 export default Key;
