@@ -62,9 +62,21 @@ function App() {
   //enter button
   const [rows, setRows] = useState([row1, row2, row3, row4, row5, row6])
   let [currentRowIndex, setCurrentRowIndex] = useState(0)
+  
+
+  const nextRow = (b) => {
+    if (b==="ENT" &&currentRowIndex<5) {
+      setCurrentRowIndex(currentRowIndex+1);
+      setCurrentIndex(0);
+      setCurrentSquare(rows[currentRowIndex+1][0]);
+    }
+    else { }
+  };
 
 
-  //Add letter to the square
+
+
+  //Add letter to the square and delete function
   const addLetter = (a) => {
     console.log (a)
     console.log (rows)
@@ -79,14 +91,11 @@ function App() {
     else {
       setCurrentSquare(currentSquare=>currentSquare.rowVal=a)
     if (currentIndex<4){
-        setCurrentIndex(currentIndex+=1)
-        setCurrentSquare(row1[currentIndex])}
+      setCurrentIndex(currentIndex+=1)
+      setCurrentSquare(row1[currentIndex])
+      }
     }
-
-    
-  
-
-  }
+  };
 
 
   
