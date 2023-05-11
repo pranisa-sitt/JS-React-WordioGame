@@ -16,7 +16,6 @@ const RandomWord = () => {
   return (
     <div>
     {getRandomWord}
-    {console.log(getRandomWord())}
     </div>
   );
 };
