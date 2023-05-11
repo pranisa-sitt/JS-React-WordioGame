@@ -49,13 +49,46 @@ const getRandomWord = () => {
 };
 
 
-//setKeysOne, setKeysTwo, setKeysThree needs to be added below after keysOne [keysOne, setKeysOne]. I've removed them to get the app working. 
 function App() {
   const [keysOne, setKeysOne] = useState(keys1);
   const [keysTwo, setKeysTwo] = useState(keys2);
   const [keysThree, setKeysThree] = useState(keys3);
+
+
   // set the initial value of the current square
-  let [currentSquare] = useState(row1[0])
+  let [currentIndex, setCurrentIndex] = useState(0)
+  let [currentSquare, setCurrentSquare] = useState(row1[currentIndex])
+ 
+  //enter button
+  const [rows, setRows] = useState([row1, row2, row3, row4, row5, row6])
+  let [currentRowIndex, setCurrentRowIndex] = useState(0)
+
+
+  //Add letter to the square
+  const addLetter = (a) => {
+    console.log (a)
+    console.log (rows)
+    if (a==="DEL" &&currentIndex>0) {
+      setCurrentSquare(row1[currentIndex])
+      setCurrentSquare(currentSquare=>currentSquare.rowVal="")
+      setCurrentIndex(currentIndex-=1)
+      setCurrentSquare(row1[currentIndex])
+      setCurrentSquare(currentSquare=>currentSquare.rowVal="")
+      setCurrentSquare(row1[currentIndex])
+    }
+    else {
+      setCurrentSquare(currentSquare=>currentSquare.rowVal=a)
+    if (currentIndex<4){
+        setCurrentIndex(currentIndex+=1)
+        setCurrentSquare(row1[currentIndex])}
+    }
+
+    
+  
+
+  }
+
+
   
 
 // STATE GRID
@@ -67,7 +100,6 @@ function App() {
   const [rowSix, setRowSix] = useState(row6);
 
 
-
   // Coloring function is here.
   // Need to edit condition to setState of these colors.
     /*let green = "#3CB043";
@@ -75,6 +107,7 @@ function App() {
     let grey = "#949494";*/
     let initial = "#E949494";
     const [letter, setLetter] = useState(initial)
+
 
 
    const [word, setWord] = useState(getRandomWord());
@@ -88,7 +121,6 @@ function App() {
 // If row1(...) any letter equals getrandomWord letters => change color to green / yellow
 // if row1(...) any letter != getrandom letters => change color to grey
 //IF row1, row2, row3 etc = getRandomWord => win!
-
 
 
 
@@ -114,7 +146,7 @@ function App() {
         <h1 className="wordle">WORDLE</h1>
       </nav>
       <div className="btn">
-          <Help />
+        <Help />
       </div>
       <div className="grid-container">
           <RowOne box={rowOne} currentSquare={currentSquare} />
@@ -126,13 +158,13 @@ function App() {
       </div>
       <div className="Keyboard">
         <div>
-          <Keyboard1 color={letter} keys1={keysOne} currentSquare={currentSquare}/>
+          <Keyboard1 color={letter} keys1={keysOne} currentSquare={currentSquare} addLetter={addLetter}/>
         </div>
         <div>
-          <Keyboard2 color={letter} keys2={keysTwo} currentSquare={currentSquare}/>
+          <Keyboard2 color={letter} keys2={keysTwo} currentSquare={currentSquare} addLetter={addLetter}/>
         </div> 
         <div>
-          <Keyboard3 color={letter} keys3={keysThree} currentSquare={currentSquare}/>
+          <Keyboard3 color={letter} keys3={keysThree} currentSquare={currentSquare} addLetter={addLetter}/>
         </div> 
       </div>
     </div>

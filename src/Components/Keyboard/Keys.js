@@ -1,8 +1,10 @@
 import React from "react"; 
 import { useState } from "react";
 import "./Key.css";
+import Square from "../Grid/Square";
 
-function Key({keyValue, selectLetter, color, index, currentSquare}) {
+
+function Key({keyValue, selectLetter, color, index, currentSquare, addLetter}) {
     //  const selectLetter = () => {
     //  }
 
@@ -19,13 +21,13 @@ function Key({keyValue, selectLetter, color, index, currentSquare}) {
 
     let letter = '##E949494'; 
     
-const handleSelectedLetter = (v) => {
-    console.log(v)
-    console.log(currentSquare)
-}
+    const handleSelectedLetter = (l) => {
+        console.log(l)
+        console.log(currentSquare)
+    }
 
     return (
-       <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => handleSelectedLetter(selectLetter)} index={index}>{keyValue}</div>
+        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => addLetter(selectLetter)} index={index}>{keyValue}</div>
 )};
     
         
