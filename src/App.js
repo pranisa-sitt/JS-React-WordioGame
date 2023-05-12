@@ -65,12 +65,14 @@ function App() {
   
 const handleKeyPress =(a) => {
   if (a === "ENT") {
+    // Enter button: changes row after 5 letters are added into the grid. it wont change row if the line isnt full of letters
     if (currentIndex === 5 && currentRowIndex <5) {
       setCurrentRowIndex(currentRowIndex +1);
       setCurrentIndex(0);
       setCurrentSquare(rows[currentRowIndex +1][0]);
     }
   } else if (a === "DEL") {
+    // Delete works if we are not on the first square
     if (currentIndex >0) {
       setCurrentIndex(currentIndex -=1);
       setCurrentSquare(rows[currentRowIndex][currentIndex]);
@@ -80,6 +82,7 @@ const handleKeyPress =(a) => {
       }
     }
   } else {
+    // this section stops the enter button from working after 5 rows are filled. 
     if (currentIndex <5) {
       setCurrentSquare((currentSquare) => (currentSquare.rowVal = a));
       setCurrentIndex((currentIndex +=1));
