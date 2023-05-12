@@ -2,7 +2,7 @@ import React from "react";
 import "./keyboard.css";
 import Key from "./Keys"
 
-function Keyboard1({selectLetter, keys1, color, currentSquare, addLetter}) {
+function Keyboard1({selectLetter, keys1, color, currentSquare, handleKeyPress}) {
     // console.log(keys1);
     //Key Array
    // const keys1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
@@ -13,7 +13,7 @@ function Keyboard1({selectLetter, keys1, color, currentSquare, addLetter}) {
     return <div>
         <div className="Row">
             {keys1.map((key) => (
-                <Key color={color} keyValue={key.keyVal} key={key.id} selectLetter={key.keyVal} currentSquare={currentSquare} addLetter={addLetter}/>
+                <Key color={color} keyValue={key.keyVal} key={key.id} selectLetter={key.keyVal} currentSquare={currentSquare} handleKeyPress={handleKeyPress}/>
             ))}
         </div>
     </div>;

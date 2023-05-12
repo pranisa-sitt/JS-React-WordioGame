@@ -62,31 +62,35 @@ function App() {
   //enter button
   const [rows, setRows] = useState([row1, row2, row3, row4, row5, row6])
   let [currentRowIndex, setCurrentRowIndex] = useState(0)
-
-
-  //Add letter to the square
-  const addLetter = (a) => {
-    console.log (a)
-    console.log (rows)
-    if (a==="DEL" &&currentIndex>0) {
-      setCurrentSquare(row1[currentIndex])
-      setCurrentSquare(currentSquare=>currentSquare.rowVal="")
-      setCurrentIndex(currentIndex-=1)
-      setCurrentSquare(row1[currentIndex])
-      setCurrentSquare(currentSquare=>currentSquare.rowVal="")
-      setCurrentSquare(row1[currentIndex])
-    }
-    else {
-      setCurrentSquare(currentSquare=>currentSquare.rowVal=a)
-    if (currentIndex<4){
-        setCurrentIndex(currentIndex+=1)
-        setCurrentSquare(row1[currentIndex])}
-    }
-
-    
   
-
+const handleKeyPress =(a) => {
+  if (a === "ENT") {
+    // Enter button: changes row after 5 letters are added into the grid. it wont change row if the line isnt full of letters
+    if (currentIndex === 5 && currentRowIndex <5) {
+      setCurrentRowIndex(currentRowIndex +1);
+      setCurrentIndex(0);
+      setCurrentSquare(rows[currentRowIndex +1][0]);
+    }
+  } else if (a === "DEL") {
+    // Delete works if we are not on the first square
+    if (currentIndex >0) {
+      setCurrentIndex(currentIndex -=1);
+      setCurrentSquare(rows[currentRowIndex][currentIndex]);
+      setCurrentSquare((currentSquare) => (currentSquare.rowVal =""));
+      if (currentIndex <5) {
+        setCurrentSquare(rows[currentRowIndex][currentIndex]);
+      }
+    }
+  } else {
+    // this section stops the enter button from working after 5 rows are filled. 
+    if (currentIndex <5) {
+      setCurrentSquare((currentSquare) => (currentSquare.rowVal = a));
+      setCurrentIndex((currentIndex +=1));
+      if (currentIndex <5)
+      setCurrentSquare(rows[currentRowIndex][currentIndex]);
+    }
   }
+};
 
 
   
@@ -158,13 +162,13 @@ function App() {
       </div>
       <div className="Keyboard">
         <div>
-          <Keyboard1 color={letter} keys1={keysOne} currentSquare={currentSquare} addLetter={addLetter}/>
+          <Keyboard1 color={letter} keys1={keysOne} currentSquare={currentSquare} handleKeyPress={handleKeyPress}/>
         </div>
         <div>
-          <Keyboard2 color={letter} keys2={keysTwo} currentSquare={currentSquare} addLetter={addLetter}/>
+          <Keyboard2 color={letter} keys2={keysTwo} currentSquare={currentSquare} handleKeyPress={handleKeyPress}/>
         </div> 
         <div>
-          <Keyboard3 color={letter} keys3={keysThree} currentSquare={currentSquare} addLetter={addLetter}/>
+          <Keyboard3 color={letter} keys3={keysThree} currentSquare={currentSquare} handleKeyPress={handleKeyPress}/>
         </div> 
       </div>
     </div>
