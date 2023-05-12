@@ -4,7 +4,7 @@ import "./Key.css";
 import Square from "../Grid/Square";
 
 
-function Key({keyValue, selectLetter, color, index, currentSquare, addLetter}) {
+function Key({keyValue, selectLetter, color, index, currentSquare, handleKeyPress}) {
     //  const selectLetter = () => {
     //  }
 
@@ -27,7 +27,7 @@ function Key({keyValue, selectLetter, color, index, currentSquare, addLetter}) {
     }
 
     return (
-        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => addLetter(selectLetter)} index={index}>{keyValue}</div>
+        <div className="key" style={{backgroundColor: `${color=letter}`}} onClick={() => handleKeyPress(selectLetter)} index={index}>{keyValue}</div>
 )};
     
         
