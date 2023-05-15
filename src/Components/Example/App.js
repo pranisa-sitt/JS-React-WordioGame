@@ -3,8 +3,6 @@ import Keyboard from "./Components/Example/Keyboard";
 import Row from "./Components/Example/Row";
 import "./Components/Keyboard/keyboard.css";
 
-// your old App.js is now in test.js, you can delete that later
-
 const keys1 = [
   { keyVal: "Q", id: 1 },
   { keyVal: "W", id: 2 },
@@ -45,6 +43,8 @@ function App() {
 
   const [color, setColor] = useState("#E949494");
 
+  const [squareColor, setSquareColor] = useState("");
+
   const [word, setWord] = useState([]);
 
   const [rowOne, setRowOne] = useState(row1);
@@ -53,7 +53,6 @@ function App() {
     randomWord();
   }, []);
 
-  // for checking when developing
   useEffect(() => {
     console.log(word);
   }, [word]);
@@ -74,7 +73,7 @@ function App() {
     } else if (a === "DEL") {
       // Delete works if we are not on the first square
       if (currentIndex > 0) {
-        setCurrentIndex((currentIndex -= 1));
+        setCurrentIndex(currentIndex - 1);
         setCurrentSquare(rows[currentRowIndex][currentIndex]);
         setCurrentSquare((currentSquare) => (currentSquare.rowVal = ""));
         if (currentIndex < 5) {
