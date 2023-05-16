@@ -13,7 +13,7 @@ function Keyboard1({selectLetter, keys1, color, currentSquare, handleKeyPress}) 
     return <div>
         <div className="Row">
             {keys1.map((key) => (
-                <Key color={color} keyValue={key.keyVal} key={key.id} selectLetter={key.keyVal} currentSquare={currentSquare} handleKeyPress={handleKeyPress}/>
+                <Key color={color} keyValue={key.keyVal} key={key.id} selectLetter={key.keyVal} currentSquare={currentSquare} handleKeyPress={handleKeyPress} />
             ))}
         </div>
     </div>;
