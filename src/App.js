@@ -3,6 +3,7 @@ import Keyboard from "./Components/Example/Keyboard";
 import Row from "./Components/Example/Row";
 import "./Components/Keyboard/keyboard.css";
 
+
 // your old App.js is now in test.js, you can delete that later
 
 const keys1 = [
@@ -91,11 +92,12 @@ const row6 = [
 ];
 
 const words = [
-  ["a", "g", "a", "i", "n"],
-  ["b", "a", "c", "o", "n"],
-  ["b", "r", "a", "i", "n"],
-  ["c", "a", "m", "e", "l"],
-  ["d", "a", "n", "c", "e"],
+  ["m", "a", "r", "i", "o"],
+  ["l", "u", "i", "g", "i"],
+  ["y", "o", "s", "h", "i"],
+  ["p", "e", "a", "c", "h"],
+  ["d", "a", "i", "s", "y"],
+  ["s", "t", "a", "r", "t"],
 ];
 
 function App() {
