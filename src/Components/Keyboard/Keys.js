@@ -4,6 +4,7 @@ import "./Key.css";
 import Square from "../Grid/Square";
 
 
+
 function Key({keyValue, selectLetter, color, index, currentSquare, handleKeyPress}) {
     //  const selectLetter = () => {
     //  }
