@@ -9,6 +9,8 @@ const Row = ({ rows, word }) => {
             ? "green"
             : word.includes(row.rowVal.toLowerCase())
             ? "yellow"
+            : word[i] !== row.rowVal.toLowerCase() && row.rowVal.toLowerCase()
+            ? "grey"
             : "";
 
         return (
@@ -20,7 +22,7 @@ const Row = ({ rows, word }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "40px",
+              fontSize: "25px",
               backgroundColor: bgColor,
             }}
             key={row.id}
