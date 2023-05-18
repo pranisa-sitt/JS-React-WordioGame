@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Keyboard from "./Components/Example/Keyboard";
 import Row from "./Components/Example/Row";
 import "./Components/Keyboard/keyboard.css";
+import EndGame from "./Components/EndGame/EndGame";
+
 
 
 // your old App.js is now in test.js, you can delete that later
@@ -101,6 +103,10 @@ const words = [
 ];
 
 function App() {
+
+  //end of game pop-up
+  const [status, setStatus] = useState(false);    
+
   const [keys, setKeys] = useState([keys1, keys2, keys3]);
 
   let [currentIndex, setCurrentIndex] = useState(0);
@@ -162,14 +168,37 @@ function App() {
           setCurrentSquare(rows[currentRowIndex][currentIndex]);
       }
     }
+    if (a === "ENT" && currentRowIndex == 5) {
+      setStatus(true);
+      const thistext = `You win`;
+    }
+
   };
+
+  //if all green => setStatus(true)
+  //if all rows completed =>setStatus(true)
+  //if all green => win, else => lose.
+
+const gameResult = "you win";
+
 
   return (
     <div>
+      <h1>{word}</h1>
       <nav className="header">
         <h1 className="wordle">WORDLE</h1>
       </nav>
+      <div className="bg-container">
+        <div className="endgame-modal">
+          {status && <EndGame close={() => setStatus(false)}>
+              <div>
+                <h1>{`hello ${gameResult}`}</h1>
+                <p></p>
+              </div>
+            </EndGame>}
+        </div>
 
+      </div>
       <div className="grid-container">
         <Row rows={rowOne} word={word} />
         <Row rows={rowTwo} word={word} />

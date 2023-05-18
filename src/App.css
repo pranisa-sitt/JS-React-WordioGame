@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   background-color: #121212;
@@ -137,4 +138,11 @@ nav h1 {
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.bg-container{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
 }
