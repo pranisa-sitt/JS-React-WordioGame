@@ -13,23 +13,28 @@
   }
   
   .content {
-    margin: 15% auto;
-    background-color: black;
-    color: #fffff5;
-    border-radius: 0.25rem;
-    width: 25vw;
-    height: 300px;
-    padding: 30px;
-    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    margin: 30% auto;
+    background-color: rgb(97, 96, 96);
+    color: #fffff5;
+    border-radius: 0.25rem;
+    width: 60vw;
+    height: auto;
+    gap: 20px;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
   }
 
-  .close{
+  /*.close {
     fill: #fffff5;
     cursor: pointer;
-    display: flex;
-    margin-left: auto;
-  }
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }*/
   
