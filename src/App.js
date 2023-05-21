@@ -246,8 +246,9 @@ function App() {
         <Row rows={rowThree} word={word} />
         <Row rows={rowFour} word={word} />
         <Row rows={rowFive} word={word} />
-        {winPopUp && <PopUp txt1={'Congratulations'} txt2={'YOU WIN!'} onClick={closePopup} />}
-        {lostPopUp && <PopUp txt1={'Oh no..'} txt2={'YOU LOST T_T'} onClick={closePopup} />}
+        {winPopUp && <PopUp txt1={'Oh yeah..'} txt2={'YOU WIN!'} onClick={closePopup} 
+        color="green" />}
+        {lostPopUp && <PopUp txt1={'Oh no..'} txt2={'GAME OVER'} onClick={closePopup} color="red"/>}
       </div>
       <div className="Keyboard">
         <div>
