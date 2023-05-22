@@ -1,4 +1,4 @@
-import "../Keyboard/keyboard.css";
+import "../KeyboardStyle/keyboard.css";
 import Key from "./Key";
 
 const Keyboard = ({ keys, color, handleKeyPress }) => {

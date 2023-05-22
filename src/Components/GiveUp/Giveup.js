@@ -17,5 +17,3 @@ const Giveup = ({ word, onClick}) => {
 };
 
 export default Giveup;
-
-/*<CgCloseO className="close" onClick={closeGiveup}/> */

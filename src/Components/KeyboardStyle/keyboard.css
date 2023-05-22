@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+.Keyboard {
+    width: 500px;
+    height: 175px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.Row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
