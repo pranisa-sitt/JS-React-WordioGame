@@ -232,7 +232,7 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
 
 
   return (
-    <div>
+    <div className="wall-container">
       {startGame && (<StartGame onClick={() => setStartGame(false)} />)}
       <nav className="header">
         <h1 className="wordle">WORDIO</h1>
