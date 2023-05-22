@@ -135,8 +135,7 @@ function App() {
 
   const [giveup, setGiveup] = useState(false);
 
-  const [startGame, setStartGame] = useState(true);
-
+  const [startGame, setStartGame] = useState(false);
 
 
 
@@ -148,6 +147,17 @@ function App() {
   useEffect(() => {
     console.log(word);
   }, [word]);
+
+
+//
+  useEffect(()=> {
+    const popStatus = localStorage.getItem('popStatus');
+    if(!popStatus){
+      setStartGame(true);
+      localStorage.setItem('popStatus', 1);
+    }
+  },[]);
+
 
   const randomWord = () => {
     const newWord = words[Math.floor(Math.random() * words.length)];
@@ -212,10 +222,6 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
     setGiveup(false)
   }
 
-  const handleStartGame = () => {
-    setStartGame(false)
-  }
-
   const restartGame = () => {
     window.location.reload(false)
   }
@@ -223,7 +229,7 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
 
   return (
     <div>
-      {startGame && (<StartGame onClick={handleStartGame} />)}
+      {startGame && (<StartGame onClick={() => setStartGame(false)} />)}
       <nav className="header">
         <h1 className="wordle">WORDIO</h1>
       </nav>
