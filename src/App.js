@@ -4,7 +4,7 @@ import Row from "./Components/Example/Row";
 import "./Components/Keyboard/keyboard.css";
 import EndGame from "./Components/EndGame/EndGame";
 import Giveup from "./Components/helpBar/Giveup";
-import "./index.css";
+
 
 
 
