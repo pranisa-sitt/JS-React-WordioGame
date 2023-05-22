@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Keyboard from "./Components/Example/Keyboard";
 import Row from "./Components/Example/Row";
 import "./Components/Keyboard/keyboard.css";
+import EndGame from "./Components/EndGame/EndGame";
 import Giveup from "./Components/helpBar/Giveup";
 
 
@@ -103,6 +104,14 @@ const words = [
 ];
 
 function App() {
+
+  //end of game pop-up
+  const [status, setStatus] = useState(false);  
+  
+  const [result,setResult] = useState();
+  
+
+
   const [keys, setKeys] = useState([keys1, keys2, keys3]);
 
   let [currentIndex, setCurrentIndex] = useState(0);
@@ -123,6 +132,8 @@ function App() {
   const [rowSix, setRowSix] = useState(row6);
 
   const [giveup, setGiveup] = useState(false)
+
+
 
 
   useEffect(() => {
@@ -154,7 +165,7 @@ function App() {
         setCurrentSquare(rows[currentRowIndex][currentIndex]);
         setCurrentSquare((currentSquare) => (currentSquare.rowVal = ""));
         if (currentIndex < 5) {
-          setCurrentSquare(rows[currentRowIndex][currentIndex]);
+        setCurrentSquare(rows[currentRowIndex][currentIndex]);
         }
       }
     } else {
@@ -166,7 +177,28 @@ function App() {
           setCurrentSquare(rows[currentRowIndex][currentIndex]);
       }
     }
+    if (a === "ENT" && currentRowIndex === 5) {
+      setStatus(true);
+      setResult(`Ups! The answer is ... ${word.join()}`)
+    }
+    if (valueRow1.join() === word.join() || valueRow2.join() === word.join() || valueRow3.join() === word.join() ||
+    valueRow4.join() === word.join() || valueRow5.join() === word.join() || 
+    valueRow6.join() === word.join() && a === "ENT") {
+      setStatus(true);
+      setResult("Good job!")
+    }    
+
   };
+
+
+let valueRow1 = row1.map(a => a.rowVal.toLowerCase());
+let valueRow2 = row2.map(a => a.rowVal.toLowerCase());
+let valueRow3 = row3.map(a => a.rowVal.toLocaleLowerCase());
+let valueRow4 = row4.map(a => a.rowVal.toLocaleLowerCase());
+let valueRow5 = row5.map(a => a.rowVal.toLocaleLowerCase());
+let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
+
+
 
   const handleGiveup = () => {
     setGiveup(true);
@@ -188,7 +220,16 @@ function App() {
       <nav className="header">
         <h1 className="wordle">WORDLE</h1>
       </nav>
-      
+      <div className="bg-container">
+        <div className="endgame-modal">
+          {status && <EndGame close={() => setStatus(false)}>
+              <div>
+                <h1>{result}</h1>
+                <p></p>
+              </div>
+            </EndGame>}
+        </div>
+      </div>
       <div className="grid-container">
         <Row rows={rowOne} word={word} />
         <Row rows={rowTwo} word={word} />

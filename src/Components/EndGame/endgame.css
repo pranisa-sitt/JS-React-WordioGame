@@ -1,0 +1,37 @@
+.overlay {
+    position: fixed;
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .content {
+    margin: 15% auto;
+    background-color: black;
+    color: #fffff5;
+    border-radius: 0.25rem;
+    width: 25vw;
+    height: 300px;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .close{
+    fill: #fffff5;
+    cursor: pointer;
+    display: flex;
+    margin-left: auto;
+  }
+
+
+  
