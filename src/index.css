@@ -1,19 +1,20 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
 
-
-body {
-  width: 100vw;
+.header {
+  height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
-  font-size: 30px;
-  font-weight: 800;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wall-container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./images/wordio-background.png);
+  background-size: 1000px
 }
 
 .btn {
@@ -38,7 +39,7 @@ body {
 
 .btn-giveup {
   justify-content: center;
-  max-width: 170px;
+  width: 170px;
   margin-left: 32.75%;
   /* width: 20%; */
   height: fit-content;
@@ -59,11 +60,18 @@ body {
   border: 3px inset white;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-direction: column; 
-  height: auto;
-  width: 100%;
+
+.wordle {
+  width: fit-content;
+  height: 75px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 60px;
+  font-weight: 800;
+  color: #c8080b ;
+  background-color: white;
+  border-radius: 5px;
+  font-family: 'Press Start 2P', cursive;
 }
