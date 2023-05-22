@@ -130,7 +130,7 @@ function App() {
 
   const [giveup, setGiveup] = useState(false);
 
-  const [startGame, setStartGame] = useState(true);
+  const [startGame, setStartGame] = useState(false);
 
   const [showImageMario, setShowImageMario] = useState(false);
   const [showImageBowser, setShowImageBowser] = useState(false);
@@ -148,6 +148,17 @@ function App() {
   useEffect(() => {
     console.log(word);
   }, [word]);
+
+
+//
+  useEffect(()=> {
+    const popStatus = localStorage.getItem('popStatus');
+    if(!popStatus){
+      setStartGame(true);
+      localStorage.setItem('popStatus', 1);
+    }
+  },[]);
+
 
   const randomWord = () => {
     const newWord = words[Math.floor(Math.random() * words.length)];
@@ -213,9 +224,7 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
     setGiveup(false)
   }
 
-  const handleStartGame = () => {
-    setStartGame(false)
-  }
+  const wordTxt = word.join('');
 
   const restartGame = () => {
     window.location.reload(false)
@@ -223,8 +232,8 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
 
 
   return (
-    <div className="wall-container">
-      {startGame && (<StartGame onClick={handleStartGame} />)}
+    <div>
+      {startGame && (<StartGame onClick={() => setStartGame(false)} />)}
       <nav className="header">
         <h1 className="wordle">WORDIO</h1>
       </nav>
@@ -267,7 +276,7 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
       </div>
       <nav className="footer">
         <button className="btn-giveup" onClick={handleGiveup}>Give up <span style={{fontSize: '20px'}}>&#127987;</span></button>
-        {giveup && (<Giveup word={word} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
+        {giveup && (<Giveup word={`"${wordTxt.toUpperCase()}"`} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
       </nav>
     </div>
   );
