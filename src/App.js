@@ -190,7 +190,6 @@ function App() {
       setStatus(true);
       setResult("Good job!")
     }    
-
   };
 
 
