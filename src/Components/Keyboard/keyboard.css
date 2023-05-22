@@ -8,13 +8,14 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    align-content: flex-start;
+    margin-top: 3rem;
 }
 
 .Row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 5px;
 }
 
 .wordle {
@@ -36,4 +37,5 @@
     height: auto;
     display: flex;
     justify-content: center; 
+    margin-bottom: 30px;
 }

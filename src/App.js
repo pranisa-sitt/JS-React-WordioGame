@@ -247,7 +247,7 @@ function App() {
         <Row rows={rowFour} word={word} />
         <Row rows={rowFive} word={word} />
         {winPopUp && <PopUp txt1={'Oh yeah..'} txt2={'YOU WIN!'} onClick={closePopup} 
-        color="green" />}
+        color="#F8D034" />}
         {lostPopUp && <PopUp txt1={'Oh no..'} txt2={'GAME OVER'} onClick={closePopup} color="red"/>}
       </div>
       <div className="Keyboard">

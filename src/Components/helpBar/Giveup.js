@@ -1,4 +1,5 @@
 import {CgCloseO} from "react-icons/cg";
+import { RestartBtn } from "../StartOver/StartOver";
 import "./giveup.css"
 
 const Giveup = ({ word, onClick}) => {
@@ -8,7 +9,8 @@ const Giveup = ({ word, onClick}) => {
         className="content">
             <h2>Answer is...</h2>
             <h3 style={{color: 'red', fontSize: '50px' , backgroundColor: '#F8D034', textAlign: 'center'}}>{word}</h3>
-            <button className='btn' onClick={onClick}>Restart</button>
+            <button className='btn' onClick={onClick}>Restart</button> 
+            
         </div>
         
     </div>
@@ -18,3 +20,4 @@ const Giveup = ({ word, onClick}) => {
 export default Giveup;
 
 /*<CgCloseO className="close" onClick={closeGiveup}/> */
+

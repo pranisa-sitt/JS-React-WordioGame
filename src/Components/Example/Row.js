@@ -19,6 +19,7 @@ const Row = ({ rows, word }) => {
               width: "50px",
               height: "50px",
               border: "3.5px solid #000000",
+              borderRadius: "3px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
