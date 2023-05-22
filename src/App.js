@@ -222,6 +222,8 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
     setGiveup(false)
   }
 
+  const wordTxt = word.join('');
+
   const restartGame = () => {
     window.location.reload(false)
   }
@@ -264,7 +266,7 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
       </div>
       <nav className="footer">
         <button className="btn-giveup" onClick={handleGiveup}>Give up <span style={{fontSize: '20px'}}>&#127987;</span></button>
-        {giveup && (<Giveup word={word} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
+        {giveup && (<Giveup word={`"${wordTxt.toUpperCase()}"`} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
       </nav>
     </div>
   );

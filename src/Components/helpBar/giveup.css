@@ -1,6 +1,6 @@
 .overlay {
     position: fixed;
-    display: block;
+    display: flex;
     overflow: auto;
     width: 100%;
     height: 100%;
@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.637);
     z-index: 900;
   }
   
@@ -18,17 +18,56 @@
     justify-content: center;
     align-items: center;
     margin: 30% auto;
-    background-color: rgb(97, 96, 96);
+    background-color: rgb(0, 0, 0);
     color: #fffff5;
-    border-radius: 0.25rem;
-    width: 60vw;
+    border-radius: 0.5rem;
+    width: 50vw;
     height: auto;
-    gap: 20px;
+    gap: 5px;
     padding: 30px;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
+    margin: auto;
   }
+
+  .content h1 {
+    color:#F8D034;
+  }
+
+  .content .card {
+    width: 30rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 50px;
+    background-color: #F8D034;
+    text-align: center;
+  }
+
+  .btn {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 2px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    text-align: center;
+    background-color: whitesmoke;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #2AA146;
+    border-style: inset;
+    border: 3px inset white;
+  }
+
+
 
   /*.close {
     fill: #fffff5;
