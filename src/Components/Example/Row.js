@@ -6,9 +6,11 @@ const Row = ({ rows, word }) => {
       {rows.map((row, i) => {
         const bgColor =
           word[i] === row.rowVal.toLowerCase()
-            ? "green"
+            ? "#2AA146"
             : word.includes(row.rowVal.toLowerCase())
-            ? "yellow"
+            ? "#F8D034"
+            : word[i] !== row.rowVal.toLowerCase() && row.rowVal.toLowerCase()
+            ? "#B3B4B6"
             : "";
 
         return (
@@ -20,7 +22,7 @@ const Row = ({ rows, word }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "40px",
+              fontSize: "25px",
               backgroundColor: bgColor,
             }}
             key={row.id}
