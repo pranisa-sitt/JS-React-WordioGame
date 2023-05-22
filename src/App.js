@@ -183,7 +183,7 @@ function App() {
     }
     if (a === "ENT" && currentRowIndex === 5) {
       setStatus(true);
-      setResult(`Ups! The answer is ... ${word.join()}`)
+      setResult(`Ups! The answer is ...` + word.join(""))
     }
     if (valueRow1.join() === word.join() || valueRow2.join() === word.join() || valueRow3.join() === word.join() ||
     valueRow4.join() === word.join() || valueRow5.join() === word.join() || 
@@ -192,6 +192,7 @@ function App() {
       setResult("Good job!")
     }    
   };
+
 
 
 let valueRow1 = row1.map(a => a.rowVal.toLowerCase());
