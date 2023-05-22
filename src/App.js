@@ -223,8 +223,6 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
   return (
     <div>
       {startGame && (<StartGame onClick={handleStartGame} />)}
-      <button className="btn-giveup" onClick={handleGiveup}>Give up <span style={{fontSize: '20px'}}>&#127987;</span></button>
-      {giveup && (<Giveup word={word} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
       <nav className="header">
         <h1 className="wordle">WORDIO</h1>
       </nav>

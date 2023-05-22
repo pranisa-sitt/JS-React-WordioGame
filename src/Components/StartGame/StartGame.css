@@ -64,7 +64,7 @@ p {
 }
 
 .btn:hover {
-  background-color: #2AA146;
+  background-color: blue;
   border-style: inset;
   border: 3px inset white;
 }
