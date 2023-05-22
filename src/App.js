@@ -8,6 +8,7 @@ import StartGame from "./Components/StartGame/StartGame";
 
 
 
+
 // your old App.js is now in test.js, you can delete that later
 
 const keys1 = [
@@ -222,10 +223,8 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
   return (
     <div>
       {startGame && (<StartGame onClick={handleStartGame} />)}
-      <button className="btn-giveup" onClick={handleGiveup}>Give up <span style={{fontSize: '20px'}}>&#127987;</span></button>
-      {giveup && (<Giveup word={word} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
       <nav className="header">
-        <h1 className="wordle">WORDLE</h1>
+        <h1 className="wordle">WORDIO</h1>
       </nav>
       <div className="bg-container">
         <div className="endgame-modal">
@@ -256,6 +255,10 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
           <Keyboard color={color} keys={keys3} handleKeyPress={handleKeyPress} />
         </div>
       </div>
+      <nav className="footer">
+        <button className="btn-giveup" onClick={handleGiveup}>Give up <span style={{fontSize: '20px'}}>&#127987;</span></button>
+        {giveup && (<Giveup word={word} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
+      </nav>
     </div>
   );
 }
