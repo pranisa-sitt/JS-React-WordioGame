@@ -5,8 +5,7 @@ import "./Components/Keyboard/keyboard.css";
 import EndGame from "./Components/EndGame/EndGame";
 import Giveup from "./Components/helpBar/Giveup";
 import StartGame from "./Components/StartGame/StartGame";
-
-
+import Mario from "./images/Mario.png";
 
 
 // your old App.js is now in test.js, you can delete that later
@@ -137,7 +136,7 @@ function App() {
 
   const [startGame, setStartGame] = useState(true);
 
-
+  const [showImage, setShowImage] =useState(false);
 
 
   useEffect(() => {
@@ -183,13 +182,14 @@ function App() {
     }
     if (a === "ENT" && currentRowIndex === 5) {
       setStatus(true);
-      setResult(`Ups! The answer is ...` + word.join(""))
+      setResult(`Game over \n` + `the answer was` + word.join(""))
     }
     if (valueRow1.join() === word.join() || valueRow2.join() === word.join() || valueRow3.join() === word.join() ||
     valueRow4.join() === word.join() || valueRow5.join() === word.join() || 
     valueRow6.join() === word.join() && a === "ENT") {
       setStatus(true);
-      setResult("Good job!")
+      setResult("Good job!");
+      setShowImage(true);
     }    
   };
 
@@ -232,7 +232,9 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
           {status && <EndGame close={() => setStatus(false)}>
               <div>
                 <h1>{result}</h1>
-                <p></p>
+                <div>
+                  {showImage && <img className="img" src={Mario}></img>}
+                </div>
               </div>
             </EndGame>}
         </div>

@@ -18,7 +18,7 @@ const Row = ({ rows, word }) => {
             style={{
               width: "50px",
               height: "50px",
-              border: "2px solid #b0b0b0",
+              border: "2px solid white",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
