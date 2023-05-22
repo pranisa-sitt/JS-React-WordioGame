@@ -23,6 +23,14 @@ body{
   background-size: 1000px;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-family: 'Press Start 2P', cursive; 
+}
+
 .btn {
   width: fit-content;
   height: fit-content;
@@ -74,7 +82,7 @@ body{
   place-items: center;
   font-size: 60px;
   font-weight: 800;
-  color: #c8080b ;
+  color: #c8080b;
   background-color: white;
   border-radius: 5px;
   font-family: 'Press Start 2P', cursive;
@@ -92,4 +100,14 @@ body{
 .img{
   margin-top: 40px;
   width: 50px;
+}
+
+.title-endGame{
+  color: #c8080b;
+  text-decoration: none;
+}
+
+.img-bowser{
+  width: 100px;
+  margin-top: 30px;
 }

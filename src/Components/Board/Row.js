@@ -1,4 +1,4 @@
-import "../Grid/grid.css";
+import "../../index.css";
 
 const Row = ({ rows, word }) => {
   return (

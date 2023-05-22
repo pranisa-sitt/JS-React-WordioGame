@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
-import Keyboard from "./Components/Example/Keyboard";
-import Row from "./Components/Example/Row";
-import "./Components/Keyboard/keyboard.css";
+import Keyboard from "./Components/Board/Keyboard";
+import Row from "./Components/Board/Row";
+import "./Components/KeyboardStyle/keyboard.css";
 import EndGame from "./Components/EndGame/EndGame";
-import Giveup from "./Components/helpBar/Giveup";
+import Giveup from "./Components/GiveUp/Giveup";
 import StartGame from "./Components/StartGame/StartGame";
 import Mario from "./images/Mario.png";
-
-
-// your old App.js is now in test.js, you can delete that later
+import Bowser from "./images/bowser.png";
 
 const keys1 = [
   { keyVal: "Q", id: 1 },
@@ -110,8 +108,6 @@ function App() {
   const [status, setStatus] = useState(false);  
   
   const [result,setResult] = useState();
-  
-
 
   const [keys, setKeys] = useState([keys1, keys2, keys3]);
 
@@ -136,7 +132,12 @@ function App() {
 
   const [startGame, setStartGame] = useState(true);
 
-  const [showImage, setShowImage] =useState(false);
+  const [showImageMario, setShowImageMario] = useState(false);
+  const [showImageBowser, setShowImageBowser] = useState(false);
+
+  const [showText, setShowText] = useState(false);
+
+
 
 
   useEffect(() => {
@@ -182,18 +183,18 @@ function App() {
     }
     if (a === "ENT" && currentRowIndex === 5) {
       setStatus(true);
-      setResult(`Game over \n` + `the answer was` + word.join(""))
+      setResult(`Game over!`);
+      setShowText(true);
+      setShowImageBowser(true);
     }
     if (valueRow1.join() === word.join() || valueRow2.join() === word.join() || valueRow3.join() === word.join() ||
     valueRow4.join() === word.join() || valueRow5.join() === word.join() || 
     valueRow6.join() === word.join() && a === "ENT") {
       setStatus(true);
       setResult("Good job!");
-      setShowImage(true);
+      setShowImageMario(true);
     }    
   };
-
-
 
 let valueRow1 = row1.map(a => a.rowVal.toLowerCase());
 let valueRow2 = row2.map(a => a.rowVal.toLowerCase());
@@ -231,9 +232,15 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
         <div className="endgame-modal">
           {status && <EndGame close={() => setStatus(false)}>
               <div>
+                <p className="title-endGame">Wordio</p>
                 <h1>{result}</h1>
+                {showText && 
+                <p>the answer was... {word}</p>}
                 <div>
-                  {showImage && <img className="img" src={Mario}></img>}
+                  {showImageMario && 
+                  <img className="img" src={Mario}></img>}
+                  {showImageBowser &&
+                  <img className="img-bowser" src={Bowser}></img>}
                 </div>
               </div>
             </EndGame>}
