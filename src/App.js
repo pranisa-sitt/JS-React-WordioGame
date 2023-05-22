@@ -4,6 +4,7 @@ import Row from "./Components/Example/Row";
 import "./Components/Keyboard/keyboard.css";
 import EndGame from "./Components/EndGame/EndGame";
 import Giveup from "./Components/helpBar/Giveup";
+import StartGame from "./Components/StartGame/StartGame";
 
 
 
@@ -131,7 +132,9 @@ function App() {
   const [rowFive, setRowFive] = useState(row5);
   const [rowSix, setRowSix] = useState(row6);
 
-  const [giveup, setGiveup] = useState(false)
+  const [giveup, setGiveup] = useState(false);
+
+  const [startGame, setStartGame] = useState(true);
 
 
 
@@ -208,6 +211,10 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
     setGiveup(false)
   }
 
+  const handleStartGame = () => {
+    setStartGame(false)
+  }
+
   const restartGame = () => {
     window.location.reload(false)
   }
@@ -215,6 +222,7 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
 
   return (
     <div>
+      {startGame && (<StartGame onClick={handleStartGame} />)}
       <button className="btn-giveup" onClick={handleGiveup}>Give up <span style={{fontSize: '20px'}}>&#127987;</span></button>
       {giveup && (<Giveup word={word} closeGiveup={handleCloseGiveup} onClick={restartGame} />)}
       <nav className="header">
