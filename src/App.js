@@ -170,6 +170,7 @@ function App() {
       // Enter button: changes row after 5 letters are added into the grid. it wont change row if the line isnt full of letters
       if (currentIndex === 5 && currentRowIndex < 5) {
         setCurrentRowIndex(currentRowIndex + 1);
+        console.log(currentRowIndex);
         setCurrentIndex(0);
         setCurrentSquare(rows[currentRowIndex + 1][0]);
       }
@@ -256,12 +257,12 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
         </div>
       </div>
       <div className="grid-container">
-        <Row rows={rowOne} word={word} />
-        <Row rows={rowTwo} word={word} />
-        <Row rows={rowThree} word={word} />
-        <Row rows={rowFour} word={word} />
-        <Row rows={rowFive} word={word} />
-        <Row rows={rowSix} word={word} />
+        <Row rows={rowOne} word={word} currentRowIndex={currentRowIndex} index={0}/>
+        <Row rows={rowTwo} word={word} currentRowIndex={currentRowIndex} index={1}/>
+        <Row rows={rowThree} word={word} currentRowIndex={currentRowIndex} index={2}/>
+        <Row rows={rowFour} word={word} currentRowIndex={currentRowIndex} index={3}/>
+        <Row rows={rowFive} word={word} currentRowIndex={currentRowIndex} index={4}/>
+        <Row rows={rowSix} word={word} currentRowIndex={currentRowIndex} index={5}/>
       </div>
       <div className="Keyboard">
         <div>
