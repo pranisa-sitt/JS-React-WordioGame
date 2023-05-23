@@ -39,4 +39,27 @@
     color: red;
   }
 
+  .btn-endGame {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 2px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    text-align: center;
+    background-color: whitesmoke;
+    cursor: pointer;
+    margin: auto;
+  }
+  
+  .btn-endGame:hover {
+    background-color: #F8D034;
+    border-style: inset;
+    border: 3px inset white;
+  }
+
+
+
   
