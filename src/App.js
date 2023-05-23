@@ -240,7 +240,7 @@ let valueRow6 = row6.map(a => a.rowVal.toLocaleLowerCase());
       </nav>
       <div className="bg-container">
         <div className="endgame-modal">
-          {status && <EndGame close={() => setStatus(false)}>
+          {status && <EndGame onClick={restartGame}  close={() => setStatus(false)}>
               <div>
                 <p className="title-endGame">Wordio</p>
                 <h1>{result}</h1>
